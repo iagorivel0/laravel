@@ -27,3 +27,7 @@ Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.
 Route::get('/carrinho', [CarrinhoControler::class, 'carrinhoLista'])->name('site.carrinho');
 
 Route::post('/carrinho', [CarrinhoControler::class, 'adicionaCarrinho'])->name('site.addCarrinho');
+
+Route::post('/remover', [CarrinhoControler::class, 'removeCarrinho'])->name('site.removeCarrinho');
+
+Route::post('/atualizar', [CarrinhoControler::class, 'atualizaCarrinho'])->name('site.atualizaCarrinho');

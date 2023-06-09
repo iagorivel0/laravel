@@ -19,7 +19,7 @@ class CarrinhoControler extends Controller
             'id'         => $request->id,
             'name'       => $request->name,
             'price'      => $request->price,
-            'quantity'   => $request->qnt,
+            'quantity'   => abs($request->qnt),
             'attributes' => [
                 'image:' => $request->img
             ]
@@ -40,7 +40,7 @@ class CarrinhoControler extends Controller
         \Cart::update($request->id, [
             'quantity' => [
                 'relative' => false,
-                'value'    => $request->quantity
+                'value'    => abs($request->quantity)
             ]
         ]);
 
